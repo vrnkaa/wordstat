@@ -10,7 +10,7 @@ from pdfminer.pdfpage import PDFPage
 from pdfminer.pdfparser import PDFParser
 
 output_string = StringIO()
-with open('sample2.pdf', 'rb') as in_file:
+with open('sample3.pdf', 'rb') as in_file:
     parser = PDFParser(in_file)
     doc = PDFDocument(parser)
     rsrcmgr = PDFResourceManager()
@@ -22,6 +22,10 @@ with open('sample2.pdf', 'rb') as in_file:
 #print(output_string.getvalue().split(" "))
 string_from_pdf = output_string.getvalue()
 list_of_words = re.findall(r'\w+', string_from_pdf)
-print(list_of_words)
+#print(list_of_words)
 print(len(list_of_words))
 print(type(list_of_words))
+list_of_words.sort()
+print(list_of_words)
+
+
