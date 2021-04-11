@@ -3,11 +3,17 @@ import listToDict
 import pdfToStr
 import strToList
 import dictToCsv
+import dictToGoogleTables
 
 
 
 str_from_pdf = pdfToStr.convert_pdf_to_str()
 list_of_words = strToList.convert_str_to_list(str_from_pdf)
-#dict_of_words = listToDict.convert_list_to_dict(list_of_words)
+dict_of_words = listToDict.convert_list_to_dict(list_of_words)
 #dictToCsv.convert_dict_to_csv(dict_of_words)
 
+i = 1
+for key, value in dict_of_words.items():
+    i = i + 1
+    dictToGoogleTables.sh.append_row([key, value])
+    

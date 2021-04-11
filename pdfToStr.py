@@ -11,7 +11,7 @@ from pdfminer.pdfparser import PDFParser
 
 def convert_pdf_to_str():
     output_string = StringIO()
-    with open('sample5.pdf', 'rb') as in_file:
+    with open('sample.pdf', 'rb') as in_file:
         parser = PDFParser(in_file)
         doc = PDFDocument(parser)
         rsrcmgr = PDFResourceManager()
