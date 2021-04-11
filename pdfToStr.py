@@ -1,5 +1,3 @@
-import re
-
 from io import StringIO
 
 from pdfminer.converter import TextConverter
@@ -10,9 +8,9 @@ from pdfminer.pdfpage import PDFPage
 from pdfminer.pdfparser import PDFParser
 
 
-def pdf_to_str():
+def pdf_to_str(path: str) -> str:
     output_string = StringIO()
-    with open('sample2.pdf', 'rb') as in_file:
+    with open(path, 'rb') as in_file:
         parser = PDFParser(in_file)
         doc = PDFDocument(parser)
         rsrcmgr = PDFResourceManager()
