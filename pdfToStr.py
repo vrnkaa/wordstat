@@ -9,7 +9,8 @@ from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
 from pdfminer.pdfpage import PDFPage
 from pdfminer.pdfparser import PDFParser
 
-def convert_pdf_to_str():
+
+def pdf_to_str():
     output_string = StringIO()
     with open('sample2.pdf', 'rb') as in_file:
         parser = PDFParser(in_file)
@@ -19,7 +20,7 @@ def convert_pdf_to_str():
         interpreter = PDFPageInterpreter(rsrcmgr, device)
         for page in PDFPage.create_pages(doc):
             interpreter.process_page(page)
-    
+
     return output_string.getvalue().lower()
 
  
