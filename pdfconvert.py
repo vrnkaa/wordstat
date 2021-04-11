@@ -1,7 +1,6 @@
 from StringParser import StringParser
 import pdfToStr
-import strToList
-import uniqueValueList
+
 
 str_from_pdf = pdfToStr.pdf_to_str()
 
